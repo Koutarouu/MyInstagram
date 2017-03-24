@@ -19586,7 +19586,7 @@ var el = yo`<footer class="site-footer">
           <li><a href="#" onclick=${lang.bind(null, 'en-US')}>${translate.message('english')}</a></li>
         </ul>
       </div>
-      <div class="col s12 l3 push-l6 center-align">© 2016 Platzigram</div>
+      <div class="col s12 l3 push-l6 center-align">© 2016 MyInstagram</div>
     </div>
   </div>
 </footer>`;
@@ -19610,7 +19610,7 @@ var el = yo`<nav class="header">
 				<div class="container">
 					<div class="row">
 						<div class="col s12 m6 offset-m1">
-							<a href="/" class="brand-logo platzigram">Platzigram</a>
+							<a href="/" class="brand-logo platzigram">MyInstagram</a>
 						</div>
 						<div class="col s2 m6 push-s10 push-m10">
 							<a href="#" class="btn btn-large btn-flat dropdown-button" data-activates="drop-user">
@@ -20278,7 +20278,7 @@ module.exports = function (user) {
 			<div class="row">
 				${user.pictures.map(function (picture) {
 		return yo`<div class="col s12 m6 l4">
-						<div href="/${user.username}/${picture.id}" class="picture-container">
+						<div class="picture-container">
 							<img src="${picture.src}" class="materialboxed picture" data-caption="${translate('likes', { likes: picture.likes })}">
 							<div class="likes"><i class="fa fa-heart"></i> ${picture.likes}</div>
 						</div>

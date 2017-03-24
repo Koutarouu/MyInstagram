@@ -1,7 +1,7 @@
 var express = require('express');
 var multer = require('multer');
 var ext = require('file-extension');
-
+var cool = require('cool-ascii-faces');
 var storage = multer.diskStorage({
   destination: function (req, file, cb) {
     cb(null, './uploads')
@@ -131,6 +131,10 @@ app.get('/:username', function (req, res) {
 app.get('/:username/:id', function (req, res) {
 	res.render('index', { title: `Platzigram - ${req.params.username}` })
 })
+
+app.get('/cool', function(request, response) {
+  response.send(cool());
+});
 
 app.listen(3000, function(err) {
 	if (err) return console.log("Hubo un error"), process.exit(1);//algo distinto de 0
