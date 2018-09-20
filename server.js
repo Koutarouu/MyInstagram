@@ -30,22 +30,22 @@ app.use(express.static('public'));
         	, restric
 */
 app.get('/', function (req, res){
-	res.render('index', { title: 'Platzigram'});
+	res.render('index', { title: 'MyInstagram'});
 })
 
 app.get('/signup', function (req, res) {
-	res.render('index', { title: 'Platzigram - Signup'});
+	res.render('index', { title: 'MyInstagram - Signup'});
 })
 
 app.get('/signin', function (req, res) {
-	res.render('index', { title: 'Platzigram - Signin'});
+	res.render('index', { title: 'MyInstagram - Signin'});
 })
 
 app.get('/api/pictures', function (req, res, next) {
 	var pictures = [
 		{
 			user: {
-				username: 'slifszic',
+				username: 'Diego',
 				avatar: 'us.jpg'
 			},
 			url: 'office.jpg',
@@ -55,8 +55,8 @@ app.get('/api/pictures', function (req, res, next) {
 		},
 		{
 			user: {
-				username: 'slifszic',
-				avatar: 'us.jpg'
+				username: 'Koutarou',
+				avatar: 'http://www.randomramen.org/assets/uploads/images/9vVr8MBNWo.png'
 			},
 			url: 'office.jpg',
 			likes: 1,
@@ -80,7 +80,7 @@ app.post('/api/pictures', function (req, res) {
 
 app.get('/api/user/:username', function(req, res) {
 	const user = {
-		username: 'slifszic',
+		username: 'Diego',
 		avatar: 'https://66.media.tumblr.com/5bd6c7bdc00c70c6996e3557a9633487/tumblr_nijgt8opO71u7889mo1_500.gif',
 		pictures: [
 			{
@@ -125,11 +125,11 @@ app.get('/api/user/:username', function(req, res) {
 })
 
 app.get('/:username', function (req, res) {
-	res.render('index', { title: `Platzigram - ${req.params.username}` })
+	res.render('index', { title: `MyInstagram - ${req.params.username}` })
 })
 
 app.get('/:username/:id', function (req, res) {
-	res.render('index', { title: `Platzigram - ${req.params.username}` })
+	res.render('index', { title: `MyInstagram - ${req.params.username}` })
 })
 
 app.get('/cool', function(request, response) {
@@ -139,7 +139,7 @@ app.get('/cool', function(request, response) {
 app.listen(3000, function(err) {
 	if (err) return console.log("Hubo un error"), process.exit(1);//algo distinto de 0
 
-	console.log("Platzigram escuchando en el puerto 3000");
+	console.log("MyInstagram escuchando en el puerto 3000");
 })
 
 //si fuera una dentro de otra ya se pondria el next dentro del cuerpo de la funcion

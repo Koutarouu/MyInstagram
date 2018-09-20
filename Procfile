@@ -1,1 +1,1 @@
-web: node server.js && gulp watch
+web: node server.js
